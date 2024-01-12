@@ -1,9 +1,9 @@
 # coverflex-to-firefly-iii
 
 After you're logged in, go to this page:
-- xxxxxxx
+- https://my.coverflex.com/meal
 - open the developer tools
-- search for a YYYY request
+- search for a "movements" request
 - copy the response
 - put it in the api_response.json file
 - run `bun script.js`
