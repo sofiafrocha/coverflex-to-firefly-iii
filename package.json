@@ -1,0 +1,15 @@
+{
+  "name": "coverflex-to-firefly-iii",
+  "version": "1.0.0",
+  "description": "After you're logged in, go to this page: - xxxxxxx - open the developer tools - search for a YYYY request - copy the response - put it in the api_response.json file - run the `npm run send` script",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "dotenv": "^16.3.1"
+  }
+}
