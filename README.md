@@ -6,4 +6,4 @@ After you're logged in, go to this page:
 - search for a "movements" request
 - copy the response
 - put it in the api_response.json file
-- run `bun script.js`
+- run `bun script.ts`
