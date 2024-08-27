@@ -44,8 +44,15 @@ if (!sendAll) {
   transactions = input.slice(0, 50);
 }
 
-transactions.forEach((t: FireflyTransaction) => {
-  axios
+console.log("Transactions in the .json file: ", input.length);
+console.log(
+  "Transactions that will be sent to Firefly III: ",
+  transactions.length,
+);
+console.log("Sending transactions...");
+
+const requests = transactions.map((t: FireflyTransaction) => {
+  return axios
     .post(
       `${fireflyUrl}/api/v1/transactions`,
       {
@@ -56,7 +63,7 @@ transactions.forEach((t: FireflyTransaction) => {
       { headers: { Authorization: `Bearer ${fireflyToken}` } },
     )
     .then(function (response) {
-      console.log("success:", response.data.data.id);
+      console.log("Created transaction #", response.data.data.id);
     })
     .catch(function (error) {
       if (error.response.data) {
@@ -67,4 +74,6 @@ transactions.forEach((t: FireflyTransaction) => {
     });
 });
 
-console.log("length", input.length);
+Promise.all(requests).then(() => {
+  console.log("All done! 🎉");
+});
