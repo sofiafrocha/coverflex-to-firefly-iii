@@ -5,6 +5,7 @@ const file = Bun.file("api_response.json");
 const data = await file.json();
 
 const fireflyToken = Bun.env.FIREFLY_API_KEY;
+const fireflyUrl = Bun.env.FIREFLY_URL;
 
 function getArgs(argv: Array<string>) {
   const result: { [key: string]: string | boolean } = {};
@@ -46,7 +47,7 @@ if (!sendAll) {
 transactions.forEach((t: FireflyTransaction) => {
   axios
     .post(
-      "http://192.168.1.6:90/api/v1/transactions",
+      `${fireflyUrl}/api/v1/transactions`,
       {
         apply_rules: true,
         error_if_duplicate_hash: true,
