@@ -6,8 +6,8 @@ const data = await file.json();
 
 const fireflyToken = Bun.env.FIREFLY_API_KEY;
 
-function getArgs(argv) {
-  const result = {};
+function getArgs(argv: Array<string>) {
+  const result: { [key: string]: string | boolean } = {};
   argv.splice(0, 2);
   argv.forEach((arg, index) => {
     if (arg.substring(0, 2) === "--") {

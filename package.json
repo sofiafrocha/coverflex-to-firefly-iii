@@ -12,6 +12,10 @@
     "axios": "^1.6.5"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.8"
+    "@types/bun": "^1.1.8",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
